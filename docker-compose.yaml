@@ -1,0 +1,16 @@
+version: '3'
+services:
+    flaskapp:
+        build: .
+        depends_on:
+            - db
+        ports:
+            - 5000:5000
+
+
+    db:
+        image: "postgres"
+        environment:
+            - POSTGRES_PASSWORD=azerty
+            - POSTGRES_USER=user
+            - POSTGRES_DB=testdb
